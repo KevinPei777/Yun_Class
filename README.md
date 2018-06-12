@@ -1,0 +1,4 @@
+# Yun_Class
+类似慕课网的在线学习平台
+第一个上传至Github的项目
+十分基础的Django小项目，有关xadmin的配置可以自行搜索
