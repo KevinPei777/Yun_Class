@@ -1,0 +1,27 @@
+{% extends 'org_base.html' %}
+{% block title %}{{ course_org.name }} - 机构课程{% endblock %}
+{% block page_title %}{{ course_org.name }}课程{% endblock %}
+{% block right_form %}
+    <div class="right companycenter layout grouping" >
+        <div class="head">
+            <h1>全部课程</h1>
+{#            <a class="green fr more" href="org-detail-course.html">查看更多  >  </a>#}
+        </div>
+        <div class="brief group_list">
+            {% for course in all_courses %}
+                <div class="module1_5 box">
+                    <a href="{% url 'course_detail' course.id %}"><img width="214" src="{{ MEDIA_URL }}{{ course.class_image }}"/></a>
+                    <div class="des">
+                        <a href="{% url 'course_detail' course.id %}"><h2>{{ course.name }}</h2></a>
+                        <span class="fl">课时：<i class="key">{{ course.learn_times }}</i></span>
+                        <span class="fr">参加人数：{{ course.students }}</span>
+                    </div>
+                    <div class="bottom">
+                        <span class="fl">{{ course.course_org }}</span>
+                        <span class="star fr  notlogin" data-favid="13"  data-fav-type="4">{{ course.collection_nums }}</span>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'org_base.html' %}
+{% block title %}{{ course_org.name }} - 机构教师{% endblock %}
+{% block page_title %}{{ course_org.name }}教师{% endblock %}
+{% block right_form %}
+    <div class="right companycenter layout" >
+        <div class="head">
+            <h1>机构教师</h1>
+        </div>
+        {% for teacher in all_teachers %}
+            <div class="diarys">
+                <div class="module5 share company-diary-box" style="padding:10px 0;">
+                    <div class="left">
+                        <img class="pic" src="{{ MEDIA_URL }}{{ teacher.teacher_image }}"/>
+                        <p>昵称：{{ teacher.name }}</p>
+                    </div>
+                    <div class="right">
+                        <div class="top">
+                            <div class="fl">
+                                <span>发表于：{{ teacher.add_time }}</span>
+                            </div>
+                        </div>
+                        <div class="middle" style="border-bottom:0;">课程介绍</div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
